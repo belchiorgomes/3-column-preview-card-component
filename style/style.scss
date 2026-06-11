@@ -1,0 +1,72 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$gold: hsl(31, 77%, 52%);
+$cyan: hsl(184, 100%, 22%);
+$green: hsl(179, 100%, 13%);
+$white: hsla(0, 0%, 100%, 0.75);
+$grayhsl:hsl(0, 0%, 95%);
+
+@mixin flex-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+@mixin containe{
+    padding: 1.2rem;
+    margin: 1rem;
+    border-radius: .6rem;
+}
+
+@mixin container-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto
+}
+
+@mixin desktop{
+    @media (min-width: 768px){
+        @content
+    }
+}
+
+body{
+    @include flex-center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container{
+    @include containe;
+    @include container-grid;
+    @include desktop{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    // width: 90%;
+    padding: 0;
+    overflow: hidden;
+
+    &-card{
+        @include containe;
+        margin: 0;
+        border-radius: 0;
+
+        &:nth-child(1){
+            background-color: $gold;
+        }
+
+        &:nth-child(2){
+            background-color: $cyan;
+        }
+
+        &:nth-child(3){
+            background-color: $green;
+        }
+    }
+}
