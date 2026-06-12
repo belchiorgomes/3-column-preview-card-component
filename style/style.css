@@ -12,6 +12,7 @@ body {
   gap: 2rem;
   width: 100vw;
   height: 100vh;
+  background-color: hsl(0, 0%, 95%);
 }
 
 .container {
@@ -22,9 +23,9 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
 }
-@media (min-width: 768px) {
+@media (min-width: 765px) {
   .container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(auto, 300px));
   }
 }
 .container {
@@ -37,6 +38,7 @@ body {
   border-radius: 0.6rem;
   margin: 0;
   border-radius: 0;
+  height: auto;
 }
 .container-card:nth-child(1) {
   background-color: hsl(31, 77%, 52%);
@@ -46,4 +48,14 @@ body {
 }
 .container-card:nth-child(3) {
   background-color: hsl(179, 100%, 13%);
+}
+.container-card h2 {
+  text-transform: uppercase;
+  color: hsla(0, 0%, 100%, 0.75);
+  font-family: "Big Shoulders", sans-serif;
+  font-size: 2em;
+}
+.container-card p {
+  color: hsl(0, 0%, 95%);
+  font-family: "Lexend Deca", sans-serif;
 }/*# sourceMappingURL=style.css.map */

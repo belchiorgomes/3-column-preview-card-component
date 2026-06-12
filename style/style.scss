@@ -31,7 +31,7 @@ $grayhsl:hsl(0, 0%, 95%);
 }
 
 @mixin desktop{
-    @media (min-width: 768px){
+    @media (min-width: 765px){
         @content
     }
 }
@@ -40,13 +40,15 @@ body{
     @include flex-center;
     width: 100vw;
     height: 100vh;
+    background-color: $grayhsl;
 }
 
 .container{
     @include containe;
     @include container-grid;
     @include desktop{
-        grid-template-columns: repeat(3, 1fr);
+        // grid-template-columns: repeat(3, 300px);
+        grid-template-columns: repeat(3, minmax(auto, 300px));
     }
     // width: 90%;
     padding: 0;
@@ -56,6 +58,7 @@ body{
         @include containe;
         margin: 0;
         border-radius: 0;
+        height: auto;
 
         &:nth-child(1){
             background-color: $gold;
@@ -67,6 +70,18 @@ body{
 
         &:nth-child(3){
             background-color: $green;
+        }
+
+        h2{
+            text-transform: uppercase;
+            color: $white;
+            font-family: "Big Shoulders", sans-serif;
+            font-size: 2em;
+        }
+
+        p{
+            color: $grayhsl;
+            font-family: "Lexend Deca", sans-serif;
         }
     }
 }
