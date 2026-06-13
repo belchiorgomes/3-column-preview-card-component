@@ -56,6 +56,8 @@ body{
 
     &-card{
         @include containe;
+        @include flex-center;
+        align-items: flex-start;
         margin: 0;
         border-radius: 0;
         height: auto;
@@ -82,6 +84,22 @@ body{
         p{
             color: $grayhsl;
             font-family: "Lexend Deca", sans-serif;
+        }
+
+        button{
+            border: none;
+            border-radius: 1.4rem;
+            padding: 1rem 1.4rem;
+            background-color: $grayhsl;
+            color: var(--color);
+            cursor: pointer;
+            transition: color .6s ease, background-color .6s ease, border .6s ease;
+
+            &:hover{
+                background-color: transparent;
+                color: $grayhsl;
+                border: 1px solid $grayhsl;
+            }
         }
     }
 }
