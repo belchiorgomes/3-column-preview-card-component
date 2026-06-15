@@ -30,6 +30,11 @@ $grayhsl:hsl(0, 0%, 95%);
     grid-template-rows: auto
 }
 
+@mixin transition($name...){
+    transition-duration: .8s;
+    transition-timing-function: ease;
+}
+
 @mixin desktop{
     @media (min-width: 765px){
         @content
@@ -61,6 +66,13 @@ body{
         margin: 0;
         border-radius: 0;
         height: auto;
+        width: 300px;
+
+        div{
+            height: 200px;
+            @include flex-center;
+            align-items: flex-start;
+        }
 
         &:nth-child(1){
             background-color: $gold;
@@ -93,7 +105,9 @@ body{
             background-color: $grayhsl;
             color: var(--color);
             cursor: pointer;
-            transition: color .6s ease, background-color .6s ease, border .6s ease;
+            text-transform: capitalize;
+            font-family: "Lexend Deca", sans-serif;
+            @include transition(color, background-color, border);
 
             &:hover{
                 background-color: transparent;
